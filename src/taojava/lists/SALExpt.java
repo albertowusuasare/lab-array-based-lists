@@ -12,6 +12,5 @@ public class SALExpt
   {
     PrintWriter pen = new PrintWriter(System.out, true);
     SimpleListExpt.expt(pen, new SimpleArrayList<String>());
-    SimpleListExpt.failFastExpt(pen, new SimpleArrayList<String>());
   } // main(String[]
 } // SALExpt
