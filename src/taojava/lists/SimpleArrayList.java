@@ -230,6 +230,7 @@ public class SimpleArrayList<T>
         {
           failFast();
           // STUB
+          throw new UnsupportedOperationException();
         } // set(T)
       };
   } // listIterator()
