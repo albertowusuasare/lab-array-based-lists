@@ -20,7 +20,8 @@ import java.util.NoSuchElementException;
  * an undetermined time in the future."
  */
 public class SimpleArrayList<T>
-  implements SimpleList<T>
+    implements
+      SimpleList<T>
 {
   // +-----------+---------------------------------------------------------
   // | Constants |
@@ -72,7 +73,7 @@ public class SimpleArrayList<T>
   /**
    * Allocate an array of T's of size size.
    */
-  @SuppressWarnings({"unchecked"})
+  @SuppressWarnings({ "unchecked" })
   T[] allocate(int size)
   {
     return (T[]) new Object[size];
@@ -128,19 +129,20 @@ public class SimpleArrayList<T>
           throws UnsupportedOperationException
         {
           failFast();
-          T[] vals = SimpleArrayList.this.values;   // A shorter name 
+          T[] vals = SimpleArrayList.this.values; // A shorter name 
 
           // If the array is not big enough, expand it
           if (SimpleArrayList.this.size >= vals.length)
             {
-              SimpleArrayList.this.values = Arrays.copyOf(vals, 2*vals.length);
+              SimpleArrayList.this.values =
+                  Arrays.copyOf(vals, 2 * vals.length);
               vals = SimpleArrayList.this.values;
             } // if the array is not big enough
 
           // Shift everything to the right
           for (int i = SimpleArrayList.this.size; i > this.pos; i--)
             {
-              vals[i] = vals[i-1];
+              vals[i] = vals[i - 1];
             } // for
 
           // Insert the new value
@@ -177,7 +179,7 @@ public class SimpleArrayList<T>
 
         public T next()
           throws NoSuchElementException
-        {  
+        {
           failFast();
           if (!this.hasNext())
             throw new NoSuchElementException();
@@ -208,7 +210,7 @@ public class SimpleArrayList<T>
 
         public void remove()
           throws UnsupportedOperationException,
-                 IllegalStateException
+            IllegalStateException
         {
           failFast();
           // Note that we've updated so that the other iterators
@@ -216,15 +218,18 @@ public class SimpleArrayList<T>
           SimpleArrayList.this.mods++;
           this.mods = SimpleArrayList.this.mods;
           // Do the real work.
+          // STUB
           throw new UnsupportedOperationException();
         } // remove()
 
         public void set(T val)
           throws UnsupportedOperationException,
-                 ClassCastException,
-                 IllegalArgumentException,
-                 IllegalStateException
+            ClassCastException,
+            IllegalArgumentException,
+            IllegalStateException
         {
+          failFast();
+          // STUB
         } // set(T)
       };
   } // listIterator()

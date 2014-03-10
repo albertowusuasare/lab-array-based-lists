@@ -73,7 +73,7 @@ public class SimpleListExpt
     ListIterator<String> lit1 = lst.listIterator();
     ListIterator<String> lit2 = lst.listIterator();
     add(pen, lit1, "addition");
-    try 
+    try
       {
         pen.println("Attempting additional add with alternate iterator.");
         add(pen, lit2, "additional");
