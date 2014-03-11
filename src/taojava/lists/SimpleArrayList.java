@@ -234,4 +234,4 @@ public class SimpleArrayList<T>
         } // set(T)
       };
   } // listIterator()
-} // interface SimpleList<T>
+} // class SimpleArrayList<T>
