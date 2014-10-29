@@ -1,0 +1,46 @@
+/**
+ *  Albert Owusu-Asare
+ *  Tue Oct 28 12:30:23 CDT 2014
+ *  This document contains written answers to the lab questions:
+ *  http://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/2014F/labs/current.html
+ */
+Exercise 1: Understanding Iterators
+
+a.  Conceptually, an iterator is positioned inbetween the elements of
+ 	a list.
+ 	
+ b. 'remove' removes the element that was recently returned by 'next()'
+ 
+ c. add ( E e) inserts the element 'e' before the element that would be 
+  	returned by a call to next(); hence, x will be added first, since the 
+  	subsequent call to next() is unaffected, y will be added again in 
+  	a position before our current implicit cursor and hence after x;
+  	
+  	eg.   a  b  c 
+  	          ^
+  	    Here, the next value would c. We add 'x' to the position immediately
+  	    before the the value returned by next() which is c. 
+  	    so we have :
+  	    
+  	    a   b  x   c
+  	             ^
+  	             
+  	    note that the cursor still lies before 'c' hence the call to next() 
+  	    still returns 'c'. This then implies that when we add 'y',, it is inserted
+  	    in the position before c giving:
+  	    
+  	    a  b x  y   c
+  	              ^
+  	              
+ d.  If we have [ a  b c]
+                   ^
+     A call to remove, removes the last element that was returned by next()
+     which is 'a'. When we call remove again, there is no last element returned
+     by a and so we may have an error.
+     
+ e. We will be able to add new elements right after creation because the 
+    new element will become the sole element on the list.
+    see 'Experiments.addAfterCreation'
+ f. No we cannot call remove right after creation because remove can 
+    only be called once per call to next()
+ 
